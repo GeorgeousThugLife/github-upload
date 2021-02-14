@@ -1,0 +1,1 @@
+windows.alert('this is jQuery')

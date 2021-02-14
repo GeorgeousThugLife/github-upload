@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+
+	<head>
+		<meta charset = 'UTF-8'>
+		<title>Document</title>
+		<link rel = "stylesheet" href = "/public/lib/bootstrap/dist/css/bootstrap.css">
+	</head>
+	
+	<body>
+		<div class = "header container">
+			<div class = "page-header">
+				<h1><a href = '/'>Home page</a> <small>Comments</small></h1>
+			</div>
+		</div>
+		<div class = "comments container">
+			<form action = "/post" method = "post">
+				<div class = "form-group">
+					<label for = "Input_Name">Name</label>
+					<input type = "text" class = "form-control" name = "name" required minlength = "2" maxlength = "16" id = "Input_Name" placeholder = "Name">
+				</div>
+				
+				<div class = "form-group">
+					<label for = "Input_Email">Your Email</label>
+					<input type = "Email" class = "form-control" name = "email" required minlength = "2" maxlength = "32" id = "Input_Email" placeholder = "Email">
+				</div>
+				
+				<div class = "form-group">
+					<label for = "Textarea_Message">Comments</label>
+					<h1> </h1>
+					<textarea class = "form-control" name = "comments" id = "Textarea_Message" cols = "200" rows = "50" required minlength = "10" maxlength = "20"></textarea>
+				</div>
+				
+				<button type = "submit" class = "btn btn-default">Submit</button>
+			</form>
+		</div>
+	</body>
+	
+</html>
