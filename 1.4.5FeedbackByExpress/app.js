@@ -86,8 +86,22 @@ app.post('/post', function(request, response)
 	//console.log('get form post request')
 	
 	//2.proceed
-	var comment = request.body
-	comment.dateTime = '2021-2-10 00:00:00'
+	/*
+	The comments object that contains the list of comments is
+	expecting to recieve an object with three properties
+	1. name
+	2. message
+	3. date
+
+	In order for it to work properly you must match them exactly
+	*/
+	const currentDate = new Date();
+	const dateString = `${currentDate.getFullYear()}-${currentDate.getMonth()}-${currentDate.getDate()}`;
+	const comment = {
+		name: request.body.name,
+		message: request.body.message,
+		date: dateString
+	};
 	comments.unshift(comment)
 	response.redirect('/')
 })
