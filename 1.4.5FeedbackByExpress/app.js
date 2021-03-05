@@ -95,10 +95,12 @@ app.post('/post', function(request, response)
 
 	In order for it to work properly you must match them exactly
 	*/
-	var comment = {
+	const currentDate = new Date();
+	const dateString = `${currentDate.getFullYear()}-${currentDate.getMonth()}-${currentDate.getDate()}`;
+	const comment = {
 		name: request.body.name,
-		message: request.body.comments,
-		date: '2021-2-10 00:00:00'
+		message: request.body.message,
+		date: dateString
 	};
 	comments.unshift(comment)
 	response.redirect('/')
